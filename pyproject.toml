@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openai-verify-api"
+version = "0.1.0"
+description = "HTTP API that drives OpenAI Verify via CloakBrowser and curl_cffi."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "cloakbrowser>=0.3.28",
+  "curl-cffi>=0.15.0",
+  "fastapi>=0.136.0",
+  "httpx>=0.28.1",
+  "python-multipart>=0.0.29",
+  "pydantic-settings>=2.10.1",
+  "uvicorn[standard]>=0.45.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=9.0.3",
+]
+
+[project.scripts]
+openai-verify-api = "openai_verify_api.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
