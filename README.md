@@ -51,6 +51,10 @@ Example response:
 }
 ```
 
+## Credits
+
+[Browser Harness](https://github.com/browser-use/browser-harness) for making this easy to set up
+
 ## Run tests
 
 ```bash
